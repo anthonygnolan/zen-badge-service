@@ -1,6 +1,11 @@
 # Badge Service
 
-
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=bugs)](https://sonarcloud.io/summary/new_code?id=45483600)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=45483600)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=45483600)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=45483600)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=coverage)](https://sonarcloud.io/summary/new_code?id=45483600)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=45483600&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=45483600)
 
 ## Getting started
 

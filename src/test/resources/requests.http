@@ -1,0 +1,102 @@
+###
+# @name = Get Badges
+GET http://localhost:8080/api/v1/badges
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+###
+
+# @name = Get Badge
+GET http://localhost:8080/api/v1/badges/1
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+
+    client.test("Response content-type is text", function() {
+        var type = response.contentType.mimeType;
+        client.assert(type === "application/hal+json", "Expected 'application/hal+json' but received '" + type + "'");
+    });
+%}
+
+###
+
+# @name = Create Badge
+POST http://localhost:8080/api/v1/badges
+Content-Type: application/json
+
+{
+  "name" : "JavaScript",
+  "description": "This is a JavaScript badge",
+  "category" : "EVENTS"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 201, "Response status is not 201");
+    });
+    client.global.set("id", response.body.id);
+%}
+
+###
+# @name = Get Created Badge
+GET http://localhost:8080/api/v1/badges/{{id}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+###
+
+# @name = Update Badge
+PUT http://localhost:8080/api/v1/badges/{{id}}
+Content-Type: application/json
+
+{
+  "name" : "JavaScriptyytyu",
+  "description": "This is a JavaScript badge.",
+  "category" : "PROGRAMMING"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+###
+# @name = Get Updated Badge
+GET http://localhost:8080/api/v1/badges/{{id}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+###
+
+# @name = Delete Badge
+DELETE http://localhost:8080/api/v1/badges/{{id}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 204, "Response status is not 202");
+    });
+%}
+###
+
+# @name = Confirm Badge Deletion
+GET http://localhost:8080/api/v1/badges/{{id}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 404, "Response status is not 404");
+    });
+%}
+###
