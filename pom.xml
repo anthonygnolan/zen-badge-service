@@ -8,7 +8,7 @@
         <version>3.0.6</version>
     </parent>
     <groupId>com.coderdojo</groupId>
-    <artifactId>zen-badge-service</artifactId>
+    <artifactId>badge-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Badge Service</name>
     <description>zen-badge-service</description>
